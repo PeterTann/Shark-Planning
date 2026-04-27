@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.4/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .glow-shadow: {
+      box-shadow: 0 0 10px #ef4444, 0 0 20px #ef4444, 0 0 30px #ef4444, 0 0 40px #ef4444;
+    }
+    .glassmorphism {
+      background: rgba( 255, 255, 255, 0.25 );
+      box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+      backdrop-filter: blur( 4px );
+      -webkit-backdrop-filter: blur( 4px );
+      border-radius: 10px;
+      border: 1px solid rgba( 255, 255, 255, 0.18 );
+    }
+  </style>
+  <title>Login | Shark Planning</title>
+</head>
+<body class="bg-black text-white">
+
+  <header class="px-8 py-3 flex justify-center">
+    <h1 class="text-4xl font-bold text-red-600">SHARK PLANNING</h1>
+  </header>
+
+  <main class="min-h-screen flex items-center justify-center">
+
+    <div class="glassmorphism bg-gray-200 bg-opacity-10 rounded-xl px-10 pt-10 pb-8 w-80">
+      <h2 class="font-bold text-2xl mb-6 text-center">Login</h2>
+
+      <form>
+        <div class="mb-4">
+          <label for="username" class="sr-only">Username</label>
+          <input type="text" 
+                 id="username" 
+                 name="username" 
+                 placeholder="your username"
+                 class="glassmorphism w-full px-4 py-2 rounded-md text-black focus:outline-none">
+        </div>
+
+        <div class="mb-4">
+          <label for="password" class="sr-only">Password</label>
+          <input type="password" 
+                 id="password" 
+                 name="password" 
+                 placeholder="your password"
+                 class="glassmorphism w-full px-4 py-2 rounded-md text-black focus:outline-none">
+        </div>
+        
+        <button class="bg-red-600 text-white rounded-md px-4 py-2 glow-shadow">
+          Log In
+        </button>
+      </form>
+
+    </div>
+
+  </main>
+
+</body>
+</html>

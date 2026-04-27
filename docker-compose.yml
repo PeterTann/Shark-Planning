@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  api:
+    build: ./api
+    container_name: shark-api
+    restart: unless-stopped
+    volumes:
+      - ./data:/app/data
+    environment:
+      - DATABASE_PATH=/app/data/shark.db
+    networks:
+      - shark-network
+
+  www:
+    image: nginx:alpine
+    container_name: shark-www
+    restart: unless-stopped
+    volumes:
+      - ./www:/usr/share/nginx/html
+      - ./config/nginx.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - shark-network
+    depends_on:
+      - api
+
+networks:
+  shark-network:
+    driver: bridge
